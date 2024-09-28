@@ -1,5 +1,9 @@
-console.log("уведомление");
-let a=3;
-let b = 43;
-console.log(a+b);
-let c="666";
+let start = 1800;
+let end = 2020;
+c = 0;
+for(let i = end; i >= start; i-4){
+    if (i == 1961) {
+        console.log("количество итераций: " + (i- start));
+    }
+    console.log("количество високосных годов: " + i);
+}
