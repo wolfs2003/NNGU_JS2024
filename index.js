@@ -10,9 +10,9 @@ console.log(summ);
 let f = 4;
 let factorial = 1;
 for(let i=1; i< f+1; i++){
-    factorial = factorial * i;
+    factorial *= i;
 }
-console.log(factorial);
+console.log("Факториал числа " + f + " = " + factorial);
 
 /*3. Вывести четные и нечетные числа от 1 до 100*/
 let c = 100;
