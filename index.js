@@ -24,6 +24,7 @@ for(let i = 1; i < c + 1; i++){
         console.log("Нечётное число: " + i)
     }
 }
+
 /*4. Вывести проверку на простое число*/
 let digital = 3;
 let proverka = true;
@@ -46,6 +47,7 @@ let increase = 4;
 for(let i = 0; i <11; i++){
     console.log(increase + " x " + i + " = " + increase*i)
 }
+
 /*6. Вывести сумму цифр числа N*/
 let dig = 1654;
 let chislo = 0;
@@ -55,6 +57,7 @@ while(dig > 0){
 }
 
 console.log("Сумма цифр = " + chislo);
+
 /*7. Обратное число*/
 let digit = 123456789;
 let obrdig = 0;
@@ -64,6 +67,7 @@ while(digit > 0){
     digit = Math.floor(digit/10)
 }
 console.log("Обратное число: " + lastdigit);
+
 /*8. Количество цифр в числе N*/
 let dig1 = 1234567890;
 let chislo1 = 0;
@@ -72,6 +76,7 @@ while(dig1 > 0){
     dig1 = Math.floor(dig1/10)
 }
 console.log("Количество цифр равно " + chislo1)
+
 /*9. Проверка палиндрома для числа N*/
 let digit1 = 123321;
 let digit2 = digit1;
@@ -89,6 +94,7 @@ else {
     answer = "Число " + digit1 + " не полиндром!"
 }
 console.log(answer);
+
 /*10. Сумма квадратов чисел от 1 до N*/
 let num = 4;
 let summ1 = 0;
