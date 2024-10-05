@@ -102,3 +102,4 @@ for(let i = 1; i < num + 1; i++){
 summ1 += Math.pow(i,2)
 }
 console.log(`Cумма квадратов равна: ${summ1}`);
+
