@@ -28,7 +28,7 @@ for(let i = 1; i < c + 1; i++){
 /*4. Вывести проверку на простое число*/
 let digital = 3;
 let proverka = true;
-for(let i = 1; i < 10; i++){
+for(let i = 2; i < 10; i++){
     if(digital%i == 0) {
         if(i != 1 && i !=digital) {
             proverka = false
