@@ -124,9 +124,9 @@ function fizzbuzz(n){
             text = "fizzbuzz";
            
         }
-        console.log(text);
+     console.log(text);
         
     }
-    return text;
+    return "";
 }
 console.log(fizzbuzz(60));
