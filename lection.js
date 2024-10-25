@@ -38,3 +38,4 @@ function tolower(params){
     return params[0].toUpperCase() + params.slice(1);
 }
 console.log(tolower('rgergerg'));
+
