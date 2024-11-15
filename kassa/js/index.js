@@ -28,17 +28,19 @@ let cart = []
 const form = document.querySelector('.form')
 const cartUI = document.querySelector('.cart')
 const total = document.querySelector('.total')
-
+const getItemData = (item) => {
+    if(item.count){
+        return `${item.title + ' x' + item.count} ----------------------- ${item.price * item.count}р \n`
+    } else {
+        return `${item.title} ----------------------- ${item.price}р \n`
+    }
+} 
 const setItemInUICart = (item) => {
     const itemUI = document.createElement('div')
-    if(item.count){
-         itemUI.textContent = `${item.title + ' x' + item.count} ---------------- ${item.price*item.count} р.`
-    } else {
-        itemUI.textContent = `${item.title} ---------------- ${item.price}`
-    }
 
-return itemUI
-
+    itemUI.textContent = getItemData(item)
+    
+    return itemUI
 }
 
 const getItem = (item) => {
