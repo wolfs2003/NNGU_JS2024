@@ -1,6 +1,3 @@
-//import {database} from './database.js';
-
-
 const database = [
     {
         id: 123,
@@ -25,30 +22,61 @@ const database = [
         title: 'Хлеб',
         price: '33',
         src: '',
-    }   
+    },   
 ]
-let cart = [];
-const form = document.querySelector('.form');
-const cartUI = document.querySelector('.cart');
+let cart = []
+const form = document.querySelector('.form')
+const cartUI = document.querySelector('.cart')
+const total = document.querySelector('.total')
 
-form.addEventListener('submit', (e)=> {
+const setItemInUICart = (item) => {
+    const itemUI = document.createElement('div')
+    if(item.count){
+         itemUI.textContent = `${item.title + ' x' + item.count} ---------------- ${item.price*item.count} р.`
+    } else {
+        itemUI.textContent = `${item.title} ---------------- ${item.price}`
+    }
+
+return itemUI
+
+}
+
+const getItem = (item) => {
+    const element = cart.find(el => el.id === item.id)
+    const elementIndex = cart.findIndex(el => el.id === item.id)
+
+    if(Boolean(element)) {
+        cart.splice(elementIndex, 1)
+        return {    
+            ...element,
+            count: element.count ? element.count + 1 : 2
+        }   
+    }
+
+    return item
+}
+
+form.addEventListener('submit', (e) => {
     e.preventDefault()
-    let item = database.find(el=>el.id === e.target[0].valueAsNumber)
-    if(item){
-        cart.push(item)
+    const item = database.find(el => el.id === e.target[0].valueAsNumber)
+
+    if(item) {
+        cart.push(getItem(item))
         e.target[0].value = ''
     } else {
         alert('Товар не найден')
     }
 
-    cartUI.innerHTML = `
-        <div>${item.title}</div>
-    `
+    while (cartUI.firstChild) {
+        cartUI.firstChild.remove()
+    }
+
+    cart.forEach((el) => {
+        cartUI.appendChild(setItemInUICart(el))
+    })
+
+    total.textContent = `ИТОГ: ${cart.reduce((total, el) => total += el.count ? el.count * el.price : el.price, 0)}рублей`
 
 })
 
-const logCart = (id) =>{
-    const item = database.find(el => el.id === id)
-    console.log(item || 'Товар не найден');
-}
-console.log(logCart(123));
+
