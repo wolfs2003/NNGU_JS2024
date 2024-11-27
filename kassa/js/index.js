@@ -77,7 +77,7 @@ form.addEventListener('submit', (e) => {
         cartUI.appendChild(setItemInUICart(el))
     })
 
-    total.textContent = `ИТОГ: ${cart.reduce((total, el) => total += el.count ? el.count * el.price : el.price, 0)}рублей`
+    total.textContent = `ИТОГ: ${cart.reduce((total, el) => total += +el.count ? +el.count * +el.price : +el.price, 0)}рублей`
 
 })
 
